@@ -3,7 +3,7 @@ import xarray as xr
 from scipy.interpolate import RegularGridInterpolator
 
 import cartopy.crs as ccrs
-from herbie import Herbie
+#from herbie import Herbie
 
 from ..constants import R_d, R_v, Cp_d, Cp_v, CONST_GRAV, p_0
 from ..EOS import getPgivenRTh, getThgivenRandT, getThgivenPandT
@@ -65,7 +65,7 @@ class NativeHRRR(object):
         """
         self.datetime = datetime
         self.verbose = verbose
-        self.H = Herbie(datetime, model='hrrr', product='nat')
+        # self.H = Herbie(datetime, model='hrrr', product='nat')
         self.H.download(verbose=True)
         self._combine_data(varlist)
         self._setup_hrrr_grid()
